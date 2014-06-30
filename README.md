@@ -38,6 +38,8 @@ curl -v -H "Accept: application/json" http://localhost:8080/services/rest/messag
 
 curl -v -X POST -H 'Content-Type: application/json' http://localhost:8080/services/rest/messageboard/update --data '{"id": "2", "title":"sample title 2", "content": "sample content 2", "sender": "sample sender", "url": "http://google.com" }'
 
+curl -v -H "Accept: application/json" http://localhost:8080/services/rest/messageboard/remove?messageId=2
+
 curl -v -H "Accept: application/json" http://localhost:8080/services/rest/messageboard/clear
 
 For SOAP use for example sopaui and point it to the wsdl URL.
