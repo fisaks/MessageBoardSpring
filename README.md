@@ -18,6 +18,7 @@ or use the maven plugin part of the pom.xml for testing.
 mvn jetty:run
 
 URLs for both WADL and WSDL that are generated from the Java annotations.
+
 REST WADL:
 http://localhost:8080/services/rest?_wadl
 
