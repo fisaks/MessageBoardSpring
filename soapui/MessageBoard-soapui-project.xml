@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="MessageBoard" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="MessageBoardImplServiceSoapBinding" type="wsdl" bindingName="{http://resource.fpi.com/}MessageBoardImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/services/MessageBoard?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/services/MessageBoard?wsdl"><con:part><con:url>http://localhost:8080/services/MessageBoard?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MessageBoardImplService" targetNamespace="http://resource.fpi.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://resource.fpi.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://resource.fpi.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Message" type="tns:messageBean"/>
+      <xs:element name="clear" type="tns:clear"/>
+      <xs:element name="clearResponse" type="tns:clearResponse"/>
+      <xs:element name="createMessage" type="tns:createMessage"/>
+      <xs:element name="createMessageResponse" type="tns:createMessageResponse"/>
+      <xs:element name="getMessage" type="tns:getMessage"/>
+      <xs:element name="getMessageResponse" type="tns:getMessageResponse"/>
+      <xs:element name="listMessages" type="tns:listMessages"/>
+      <xs:element name="listMessagesResponse" type="tns:listMessagesResponse"/>
+      <xs:element name="listMessagesV2" type="tns:listMessagesV2"/>
+      <xs:element name="listMessagesV2Response" type="tns:listMessagesV2Response"/>
+      <xs:element name="removeMessage" type="tns:removeMessage"/>
+      <xs:element name="removeMessageResponse" type="tns:removeMessageResponse"/>
+      <xs:element name="update" type="tns:update"/>
+      <xs:element name="updateResponse" type="tns:updateResponse"/>
+      <xs:complexType name="getMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="messageId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMessageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+          <xs:element minOccurs="0" name="content" type="xs:string"/>
+          <xs:element minOccurs="0" name="sender" type="xs:string"/>
+          <xs:element minOccurs="0" name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="exceptionDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="faultMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="update">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createMessageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listMessagesV2">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listMessagesV2Response">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listMessages">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listMessagesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="messageId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeMessageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:messageBean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="clear">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="clearResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:element name="ServiceException" type="tns:ServiceException"/>
+      <xs:complexType name="ServiceException">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="faultDetails" type="tns:exceptionDetails"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getMessageResponse">
+    <wsdl:part element="tns:getMessageResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="update">
+    <wsdl:part element="tns:update" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listMessagesResponse">
+    <wsdl:part element="tns:listMessagesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessage">
+    <wsdl:part element="tns:getMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeMessageResponse">
+    <wsdl:part element="tns:removeMessageResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createMessageResponse">
+    <wsdl:part element="tns:createMessageResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clearResponse">
+    <wsdl:part element="tns:clearResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listMessagesV2">
+    <wsdl:part element="tns:listMessagesV2" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listMessages">
+    <wsdl:part element="tns:listMessages" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clear">
+    <wsdl:part element="tns:clear" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateResponse">
+    <wsdl:part element="tns:updateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listMessagesV2Response">
+    <wsdl:part element="tns:listMessagesV2Response" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createMessage">
+    <wsdl:part element="tns:createMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ServiceException">
+    <wsdl:part element="tns:ServiceException" name="ServiceException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeMessage">
+    <wsdl:part element="tns:removeMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MessageBoard">
+    <wsdl:operation name="getMessage">
+      <wsdl:input message="tns:getMessage" name="getMessage"></wsdl:input>
+      <wsdl:output message="tns:getMessageResponse" name="getMessageResponse"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <wsdl:input message="tns:update" name="update"></wsdl:input>
+      <wsdl:output message="tns:updateResponse" name="updateResponse"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createMessage">
+      <wsdl:input message="tns:createMessage" name="createMessage"></wsdl:input>
+      <wsdl:output message="tns:createMessageResponse" name="createMessageResponse"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listMessagesV2">
+      <wsdl:input message="tns:listMessagesV2" name="listMessagesV2"></wsdl:input>
+      <wsdl:output message="tns:listMessagesV2Response" name="listMessagesV2Response"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listMessages">
+      <wsdl:input message="tns:listMessages" name="listMessages"></wsdl:input>
+      <wsdl:output message="tns:listMessagesResponse" name="listMessagesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMessage">
+      <wsdl:input message="tns:removeMessage" name="removeMessage"></wsdl:input>
+      <wsdl:output message="tns:removeMessageResponse" name="removeMessageResponse"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clear">
+      <wsdl:input message="tns:clear" name="clear"></wsdl:input>
+      <wsdl:output message="tns:clearResponse" name="clearResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MessageBoardImplServiceSoapBinding" type="tns:MessageBoard">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="update">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="update">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listMessagesV2">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listMessagesV2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listMessagesV2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listMessages">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listMessages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listMessagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clear">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="clear">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MessageBoardImplService">
+    <wsdl:port binding="tns:MessageBoardImplServiceSoapBinding" name="MessageBoardImplPort">
+      <soap:address location="http://localhost:8080/services/MessageBoard"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="createMessage" bindingOperationName="createMessage" type="Request-Response" outputName="createMessageResponse" inputName="createMessage" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>test</content>
+            <!--Optional:-->
+            <sender>test</sender>
+            <!--Optional:-->
+            <title>as</title>
+            <!--Optional:-->
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listMessages" bindingOperationName="listMessages" type="Request-Response" outputName="listMessagesResponse" inputName="listMessages" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessages/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessages"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listMessagesV2" bindingOperationName="listMessagesV2" type="Request-Response" outputName="listMessagesV2Response" inputName="listMessagesV2" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessagesV2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessagesV2"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="clear" bindingOperationName="clear" type="Request-Response" outputName="clearResponse" inputName="clear" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:clear/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/clear"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getMessage" bindingOperationName="getMessage" type="Request-Response" outputName="getMessageResponse" inputName="getMessage" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:getMessage>
+         <!--Optional:-->
+         <messageId>2</messageId>
+      </res:getMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/getMessage"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="update" bindingOperationName="update" type="Request-Response" outputName="updateResponse" inputName="update" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:update>
+         <!--Optional:-->
+         <message>
+        	  <id>20</id>
+            <title>as 323</title>
+            <content>test</content>
+            <sender>test</sender>
+            <url>http://www.google.com</url>
+         </message>
+      </res:update>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/update"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="removeMessage" bindingOperationName="removeMessage" type="Request-Response" outputName="removeMessageResponse" inputName="removeMessage" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:removeMessage>
+         <!--Optional:-->
+         <messageId>?</messageId>
+      </res:removeMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/removeMessage"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="MessageBoard" type="rest" basePath="/services/rest" definitionUrl="http://localhost:8080/services/rest?_wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8080</con:endpoint></con:endpoints><con:resource name="/messageboard" path="/messageboard"><con:settings/><con:parameters/><con:resource name="/clear" path="/clear"><con:settings/><con:parameters/><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="/createMessage" path="/createMessage"><con:settings/><con:parameters/><con:method name="POST" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="/get" path="/get"><con:settings/><con:parameters/><con:method name="GET" method="GET"><con:settings/><con:parameters><con:parameter><con:name>messageId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:long</con:type><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="/listMessages" path="/listMessages"><con:settings/><con:parameters/><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:parameters/></con:request></con:method></con:resource><con:resource name="/listMessages/v2" path="/listMessages/v2"><con:settings/><con:parameters/><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:parameters/></con:request></con:method></con:resource><con:resource name="/update" path="/update"><con:settings/><con:parameters/><con:method name="POST" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:resource></con:interface><con:testSuite name="SOAP TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Clear Board" searchProperties="true" id="f7e0c0c5-5a15-47f9-9c8a-e593ac621790"><con:settings/><con:testStep type="request" name="clear - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>clear</con:operation><con:request name="clear - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:clear/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/clear"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="listMessages - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessages</con:operation><con:request name="listMessages - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessages/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration/></con:assertion><con:assertion type="XQuery Match" name="no messages in response"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>0&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessages"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Test Validations" searchProperties="true" id="5fc9e12a-8239-4264-8ca8-aa489a0553dd"><con:settings/><con:testStep type="request" name="createMessage - Invalid url"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - Invalid url" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>test content</content>
+            <!--Optional:-->
+            <sender>test sender</sender>
+            <!--Optional:-->
+            <title>test title</title>
+            <!--Optional:-->
+            <url>www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>valid URL</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - no title"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - no title" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>test</content>
+            <!--Optional:-->
+            <sender>test</sender>
+            <!--Optional:-->
+            <title></title>
+            <!--Optional:-->
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;faultMessage>title may not be empty&lt;/faultMessage></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - to short title"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - to short title" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>test content</content>
+            <!--Optional:-->
+            <sender>test sender</sender>
+            <!--Optional:-->
+            <title>t</title>
+            <!--Optional:-->
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;faultMessage>title length must be between</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - no content"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - no content" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content></content>
+            <!--Optional:-->
+            <sender>test</sender>
+            <!--Optional:-->
+            <title>test</title>
+            <!--Optional:-->
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;faultMessage>content may not be empty&lt;/faultMessage></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - no sender"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - no sender" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>test</content>
+            <!--Optional:-->
+            <sender></sender>
+            <!--Optional:-->
+            <title>test</title>
+
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;faultMessage>sender may not be empty&lt;/faultMessage></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - sender to long"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - sender to long" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>test</content>
+            <!--Optional:-->
+            <sender>test test test testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest test</sender>
+            <!--Optional:-->
+            <title>test</title>
+            <!--Optional:-->
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>faultMessage>sender length must be between</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - content to long"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - content to long" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <!--Optional:-->
+            <content>testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            testtesttesttesttest
+            testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestttesttestt</content>
+            <!--Optional:-->
+            <sender>test</sender>
+            <!--Optional:-->
+            <title>test</title>
+            <!--Optional:-->
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;faultMessage>content length must be between</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Messages" searchProperties="true" id="7cd2f850-0d62-4309-80d9-10df1c1f8eca"><con:settings/><con:testStep type="request" name="createMessage - without URL data"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - without URL data" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <content>test content</content>
+            <sender>test sender</sender>
+            <title>test title</title>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="createMessage - with URL data"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>createMessage</con:operation><con:request name="createMessage - with URL data" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:createMessage>
+         <!--Optional:-->
+         <message>
+            <content>test content</content>
+            <sender>test sender</sender>
+            <title>test title</title>
+            <url>http://www.google.com</url>
+         </message>
+      </res:createMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/createMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="List Messages" searchProperties="true" id="a1a0103f-223c-491a-8d30-d41c2342f4f9"><con:settings/><con:testStep type="request" name="listMessages - V1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessages</con:operation><con:request name="listMessages - V1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessages/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="XQuery Match" name="2 return messages"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>2&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//url)</path><content>&lt;xml-fragment>0&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessages"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="listMessages - V2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessages</con:operation><con:request name="listMessages - V2" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessagesV2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="XQuery Match" name="2 return messages"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>2&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:one-or-more(//url)</path><content>&lt;url>http://www.google.com&lt;/url></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessages"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get And Update Message" searchProperties="true" id="e68e8479-a6cf-4dd4-b7e2-e943c35b19b5"><con:settings/><con:testStep type="request" name="listMessagesV2 - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessagesV2</con:operation><con:request name="listMessagesV2 - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessagesV2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>2&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessagesV2"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer of message id"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>listMessagesV2 - Request 1</con:sourceStep><con:sourcePath>//return[last()]/id</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>getMessage - Request 1</con:targetStep><con:targetPath>//messageId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="getMessage - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>getMessage</con:operation><con:request name="getMessage - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:getMessage>
+         <!--Optional:-->
+         <messageId>12</messageId>
+      </res:getMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//id)</path><content>&lt;xml-fragment>1&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/getMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Copy of Property Transfer of message id"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" entitize="false" transferToAll="false" ignoreEmpty="false" useXQuery="false" transferChildNodes="false"><con:name>id2</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>listMessagesV2 - Request 1</con:sourceStep><con:sourcePath>//return/id</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>update - Request 1</con:targetStep><con:targetPath>//message/id</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="update - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>update</con:operation><con:request name="update - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:update>
+        <message>
+            <id>11</id>
+            <title>test title updated</title>
+            <content>test content updated</content>
+            <sender>test sender updated</sender>
+            <url>http://www.yahoo.com</url>
+         </message>
+      </res:update>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains update message 1 return value"><con:configuration><token>&lt;return>1&lt;/return></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/update"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Copy of Copy of Property Transfer of message id"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" entitize="false" transferToAll="false" ignoreEmpty="false" useXQuery="false" transferChildNodes="false"><con:name>id2</con:name><con:sourceType>Request</con:sourceType><con:sourceStep>update - Request 1</con:sourceStep><con:sourcePath>//message/id</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>getMessage - After update</con:targetStep><con:targetPath>//messageId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="getMessage - After update"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>getMessage</con:operation><con:request name="getMessage - After update" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:getMessage>
+         <!--Optional:-->
+         <messageId>11</messageId>
+      </res:getMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//id)</path><content>&lt;xml-fragment>1&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>//return</path><content><![CDATA[<return xmlns:ns2="http://resource.fpi.com/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <id>*</id>
+  <title>test title updated</title>
+  <content>test content updated</content>
+  <sender>test sender updated</sender>
+  <url>http://www.yahoo.com</url>
+</return>]]></content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>true</ignoreNamspaceDifferences><ignoreComments>true</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/getMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Remove One Message" searchProperties="true" id="070a9a77-e837-4bc2-9953-032d454b9dc7"><con:settings/><con:testStep type="request" name="listMessagesV2 - To Remove"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessagesV2</con:operation><con:request name="listMessagesV2 - To Remove" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessagesV2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>2&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessagesV2"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="Copy of Property Transfer of message id"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>id</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>listMessagesV2 - To Remove</con:sourceStep><con:sourcePath>//return[last()]/id</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>removeMessage - Request 1</con:targetStep><con:targetPath>//messageId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="removeMessage - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>removeMessage</con:operation><con:request name="removeMessage - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:removeMessage>
+         <!--Optional:-->
+         <messageId>12</messageId>
+      </res:removeMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>1&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/removeMessage"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="listMessagesV2 - after Remove"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessagesV2</con:operation><con:request name="listMessagesV2 - after Remove" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessagesV2/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>1&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessagesV2"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Clear Board At End" searchProperties="true" id="f18bd045-91ec-40ce-9078-d4d0a194713c"><con:settings/><con:testStep type="request" name="clear - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>clear</con:operation><con:request name="clear - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:clear/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/clear"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="listMessages - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MessageBoardImplServiceSoapBinding</con:interface><con:operation>listMessages</con:operation><con:request name="listMessages - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/MessageBoard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.fpi.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:listMessages/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration/></con:assertion><con:assertion type="XQuery Match" name="no messages in response"><con:configuration><path>fn:count(//return)</path><content>&lt;xml-fragment>0&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://resource.fpi.com/MessageBoard/listMessages"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="REST TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="GET - Request 1"><con:settings/><con:config service="MessageBoard" resourcePath="/services/rest/messageboard/clear" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET - Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
