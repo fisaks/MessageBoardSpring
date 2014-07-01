@@ -45,7 +45,7 @@ curl -v -H "Accept: application/json" http://localhost:8080/services/rest/messag
 For SOAP use for example sopaui and point it to the wsdl URL.
 
 
-The soapui folder contains and soapui project file with test suites for both SOAP and REST that can be used for testing
-with the jetty plugin.
+The soapui folder contains an soapui project file with test suites for both SOAP and REST that can be used for testing
+with Soapui.
 
 
